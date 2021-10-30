@@ -1,0 +1,183 @@
+.i {
+  display: flex;
+  height: 100vh;
+}
+
+.i-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.i-right {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.i-left-wrapper {
+  padding: 50px;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.i-intro {
+  font-size: 25px;
+  font-weight: 300;
+ 
+  margin-bottom: 2rem;
+}
+
+.i-name {
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
+
+.i-title {
+  height: 50px;
+  
+}
+
+.i-title-wrapper {
+  height: 50%;
+  animation: move 6s ease-in-out infinite;
+}
+
+@keyframes move {
+  10% {
+    transform: translateY(-10px);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+.i-title-item {
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #1a237e;
+  display: flex;
+  align-items: center;
+}
+
+.i-scroll {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 20px;
+  animation: mouse 6s infinite ease-out;
+  animation-delay: 1s;
+}
+
+@keyframes mouse {
+  25% {
+    transform: translateY(20px);
+  }
+  30% {
+    transform: translateY(30px);
+  }
+}
+
+.i-right .i-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.i-bg {
+  /* background-color: #1a237e; */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#parent {
+  position: relative;
+  width: 19rem;
+  height: 19rem;
+  /* border: 1px solid rgba(29, 2, 2, 0.1); */
+  border-radius: 50%;
+  transform: rotate(0deg);
+  transition: transform 0.8s linear;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+
+  animation: iconmove 6s ease-in-out infinite;
+}
+
+#child-1 {
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+}
+
+#child-2 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+
+  transform: translate(200px);
+}
+
+#child-3 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  transform: translateY(200px);
+}
+
+@keyframes iconmove {
+  25% {
+    transform: rotate(35deg);
+  }
+}
+
+/* medai query */
+@media screen and (max-width: 480px) {
+  .i {
+    flex-direction: column;
+  }
+
+  .i-left-wrapper {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+
+  .i-intro {
+    line-height: 2;
+  }
+
+  .i-desc {
+    max-width: 300px;
+  }
+
+  /* title */
+
+  .i-title {
+    height: 70px;
+    overflow: hidden;
+  }
+
+  .i-title-wrapper {
+    height: 100%;
+    animation: move 6s ease-in infinite;
+  }
+}
